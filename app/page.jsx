@@ -1,6 +1,6 @@
 import Intrro from "@/components/Intrro";
 import NavBar from "@/components/NavBar";
-import Image from "next/image";
+import About from "@/components/About";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
 
         <NavBar />
         <Intrro />
+        <About />
 
 
     </main>

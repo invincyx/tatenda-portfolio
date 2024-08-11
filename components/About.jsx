@@ -10,7 +10,7 @@ export default function About() {
                     </div>
                  </div>
         </div>
-        <div className="rounded-lg lg:col-span-2">
+        <div className="rounded-lg lg:col-span-2 text-lg text-gray-600">
         
                 <h3 className="mb-4 mt-32 text-7xl font-extrabold lg:text-5xl  text-center ">About Me</h3>
                 <p className="px-24 py-4">

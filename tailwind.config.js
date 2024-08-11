@@ -8,7 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-
+      fontWeight: {
+        extrabold: '800',
+      },
     },
     daisyui: {
       themes: [

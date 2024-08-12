@@ -5,7 +5,7 @@ export default function About() {
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 py-4 px-32">
         <div className=" rounded-lg">
         <div className="avatar py-24">
-                    <div className="ring-primary ring-offset-base-100 w-96 rounded-full ring ring-offset-2">
+                    <div className="ring-green-700 ring-offset-base-100 w-96 rounded-full ring ring-offset-2">
                         <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                     </div>
                  </div>

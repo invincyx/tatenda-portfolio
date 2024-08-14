@@ -8,8 +8,8 @@ export default function ServiceCard({icon, title, description}) {
 
           {icon}
     </div>
-    <h2 className="mb-4 text-xl tracking-tight font-semibold text-center text-gray-900 dark:text-white">{title}</h2>
-    <p className="text-center">{description}</p>
+    <h2 className="mb-4  text-xl tracking-tight font-semibold text-center text-gray-900 dark:text-white">{title}</h2>
+    <p className="text-center mx-4">{description}</p>
   </div>
   )
 }

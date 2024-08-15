@@ -4,7 +4,7 @@ import PortfolioRImageItem from './portfolio/PortfolioRImageItem'
 
 export default function Portfolio() {
   return (
-   <section className="px-32 py-12">
+   <section className="px-4 py-6 lg:px-32 lg:py-12 ">
        <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-900 dark:text-white">Portfolio</h3>
        <PortfolioLImageItem 
        title="U4ric Sports"
@@ -24,7 +24,7 @@ Implemented a USSD-based payment gateway for a content delivery platform, enabli
        />
 
         <div className="flex justify-center py-10">
-          <button class="btn btn-warning bg-green-700 text-white border-green-700">View More Projects</button>
+          <button className="btn btn-warning bg-green-700 text-white border-green-700">View More Projects</button>
         </div>
 
    </section>

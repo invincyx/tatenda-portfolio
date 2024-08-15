@@ -8,7 +8,7 @@ export default function PortfolioLImageItem({title, imageLink, description, link
         <Image src={imageLink} alt={title} width={500} height={500} />
     </div>
     <div className="rounded-lg">
-        <h3 className="py-4 text-7xl font-semibold lg:text-2xl">{title}</h3>
+        <h3 className="py-4 text-2xl font-semibold lg:text-2xl">{title}</h3>
         <p className="text-gray-500">{description} </p>
         <button className="btn btn-outline btn-success mt-10 px-20">Details</button>
     </div>

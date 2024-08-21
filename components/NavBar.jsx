@@ -1,8 +1,29 @@
-import React from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import NavItem from './nav/NavItem';
+import GreenAnimatedButton from './misc/GreenAnimatedButton';
 
 export default function NavBar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="bg-gradient-to-r from-green-50 to-emerald-50 py-8">
+    <header className={`fixed top-0 left-0 right-0 z-50  transition-colors duration-300 ${isScrolled ? 'bg-white py-2' : 'bg-gradient-to-r from-green-50 to-emerald-50 py-8'}`}>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
@@ -20,37 +41,39 @@ export default function NavBar() {
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <a className="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#intrro"> Home </a>
-                </li>
+               <NavItem
+                    link="#home"
+                    title="Home"
+                />
 
-                <li>
-                  <a className="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#about"> About </a>
-                </li>
+                <NavItem
+                    link="#about"
+                    title="About"
+                />
 
-                <li>
-                  <a className="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#services"> Services </a>
-                </li>
+                <NavItem
+                    link="#services"
+                    title="Services"
+                />
 
-                <li>
-                  <a className="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#portfolio"> Portfolio </a>
-                </li>
+                <NavItem
+                    link="#portfolio"
+                    title="Portfolio"
+                />
 
-                <li>
-                  <a className="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#contact"> Contact </a>
-                </li>
+                <NavItem
+                    link="#contact"
+                    title="Contact"
+                />
               </ul>
             </nav>
           </div>
 
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
-              <a
-                className="rounded-md bg-green-700 px-5 py-2.5 text-sm font-medium text-white shadow"
-                href="#"
-              >
-                Hire Me
-              </a>
+             <GreenAnimatedButton
+              label="Hire Me"
+              />
             </div>
 
             <div className="block md:hidden">

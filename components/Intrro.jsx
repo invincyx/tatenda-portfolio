@@ -1,14 +1,37 @@
-import React from 'react'
+"use client"
+import React, {useRef, useEffect} from 'react'
 import { RiDownload2Line } from "react-icons/ri";
 import Image from 'next/image'
 import GreenAnimatedButton from './misc/GreenAnimatedButton';
 import GrayAnimatedButton from './misc/GrayAnimatedButton';
+import { motion, useAnimate, useInView } from 'framer-motion';
+
 
 
 export default function Intrro() {
+
+  const ref =  useRef(null)
+  const isInView =  useInView(ref, {once: true})
+
+  useEffect(()=>{
+    console.log(`Is in view: ${isInView}`)
+  }, [isInView])
+
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8  bg-gradient-to-r from-green-50 to-emerald-50 px-4 lg:px-32 relative">
-      <div className=" lg:col-span-2 lg:py-72">
+      <motion.div 
+      ref={ref}
+      variants={{
+        hidden: {opacity: 0, y: 75},
+        visible: {opacity: 1, y: 0}
+      }}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        duration: 0.5, delay: 0.25
+      }}
+
+      className=" lg:col-span-2 lg:py-72">
         <h3 className="mb-4 text-4xl font-bold lg:text-6xl ">Hello, I'm</h3>
         <h3 className="mb-4 text-4xl font-bold lg:text-6xl text-green-700 ">Tatenda </h3>
         <h3 className="mb-4  text-4xl font-bold lg:text-6xl  ">FullStack Developer</h3>
@@ -27,7 +50,7 @@ export default function Intrro() {
           icon={<RiDownload2Line className="text-xl" />}
           />
         </div>
-      </div>
+      </motion.div>
       <div className="mt-20 lg:mt-32 lg:col-span-1">
         <Image src="/stack.png" alt="Picture of the author" width={500} height={500} className="hidden lg:block" />
       </div>

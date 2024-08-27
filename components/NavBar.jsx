@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import NavItem from './nav/NavItem';
 import GreenAnimatedButton from './misc/GreenAnimatedButton';
 
@@ -23,7 +22,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50  transition-colors duration-300 ${isScrolled ? 'bg-white py-2' : 'bg-gradient-to-r from-green-50 to-emerald-50 py-8'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50  transition-colors duration-300 ${isScrolled ? 'bg-black/70 backdrop-blur-md': ' bg-opacity-0' }  py-2 `}>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">

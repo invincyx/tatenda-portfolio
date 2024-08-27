@@ -20,7 +20,7 @@ export default function NavItem({ active , link, title}) {
         rotate:"0deg"
     }}
     >
-    <Link className="text-gray-500 font-semibold transition hover:text-gray-500/75" href={link}> {title} </Link>
+    <Link className="text-gray-300 font-semibold transition hover:text-gray-500/75" href={link}> {title} </Link>
   </motion.li>
 </MotionConfig>
 

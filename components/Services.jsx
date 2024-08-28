@@ -4,10 +4,10 @@ import { RiWindowFill, RiSmartphoneFill,RiServerFill } from "react-icons/ri";
 
 export default function Services() {
   return (
-    <div className="bg-gradient-to-r from-green-50 to-emerald-50  lg:py-16 lg:px-32 py-6 px-4">
-       
-            <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-900 dark:text-white">Services</h3>
-            <p className="lg:w-1/2 mx-auto text-center">I specialize in delivering high-quality web and app development solutions tailored to your needs.</p>
+    <div className="bg-gray-950  lg:py-16 lg:px-32 py-6 px-4">
+       {/* bg-gradient-to-r from-green-50 to-emerald-50 */}
+            <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-200 dark:text-white">Services</h3>
+            <p className="lg:w-1/2 mx-auto text-center text-gray-200">I specialize in delivering high-quality web and app development solutions tailored to your needs.</p>
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 py-16">
                   <ServiceCard 
                   icon={<RiWindowFill />}

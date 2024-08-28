@@ -4,8 +4,8 @@ import PortfolioRImageItem from './portfolio/PortfolioRImageItem'
 
 export default function Portfolio() {
   return (
-   <section className="px-4 py-6 lg:px-32 lg:py-12 ">
-       <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-900 dark:text-white">Portfolio</h3>
+   <section className="px-4 py-6 lg:px-32 lg:py-12 bg-gray-950">
+       <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-100 dark:text-white">Portfolio</h3>
        <PortfolioLImageItem 
        title="U4ric Sports"
        imageLink="/portfolio/u4ric.png"

@@ -1,8 +1,10 @@
 import React from 'react'
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-100">
+    <footer className="bg-gray-950">
   <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
     <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
       <a
@@ -101,7 +103,7 @@ export default function Footer() {
     </div>
 
     <p className="mt-12 text-center text-sm text-gray-500 lg:text-right">
-      Copyright &copy; 2022. All rights reserved.
+      Copyright &copy; {currentYear}. All rights reserved.
     </p>
   </div>
 </footer>

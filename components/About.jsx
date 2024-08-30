@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className="lg:px-32 bg-gray-900">
+    <div className="lg:px-32 bg-gray-950">
         <div className="rounded-lg lg:col-span-2 text-lg  py-16">
         
                 <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-100 ">About Me</h3>

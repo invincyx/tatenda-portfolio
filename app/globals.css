@@ -169,3 +169,7 @@
 */
 
 
+.bg-blur-sm {
+    backdrop-filter: blur(8px); /* Adjust the blur amount as needed */
+  }
+  

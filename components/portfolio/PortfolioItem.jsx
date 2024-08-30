@@ -1,8 +1,9 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { motion, MotionConfig, easeInOut } from 'framer-motion'
 
-export default function PortfolioLImageItem({ title, imageLink, description, link }) {
+export default function PortfolioItem({ title, imageLink, description, link }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const truncatedDescription = description.length > 300 ? description.substring(0, 250) + '...' : description;
@@ -25,9 +26,24 @@ export default function PortfolioLImageItem({ title, imageLink, description, lin
       {/* Changed lg:grid-cols-2 to lg:grid-cols-1 */}
       <div className={`rounded-lg ${isModalOpen ? 'blur-sm' : ''}`}>
 
-      <div className="bg-gray-900 px-2 pt-8 rounded-lg flex justify-center">
+      <div className="bg-gray-900 px-2 pt-8 rounded-lg flex justify-center cursor-pointer"  onClick={toggleModal}>
         <div className="overflow-hidden rounded-t-lg w-full max-w-md">
-          <Image src={imageLink} alt={title} width={500} height={500} className="w-full object-cover" />
+            <MotionConfig
+                transition={{
+                  duration: 0.125,
+                  ease: easeInOut
+              }}>
+              <motion.img 
+                  whileHover={{
+                    scale: 1.05,
+                    rotate: "2.5deg"
+                }}
+                whileTap={{
+                    rotate:"0deg"
+                }}
+                  src={imageLink} alt={title} width={500} height={500} 
+                  className="w-full object-cover" />
+            </MotionConfig>
         </div>
       </div>
       
@@ -73,7 +89,7 @@ export default function PortfolioLImageItem({ title, imageLink, description, lin
             <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline mb-4 block">
               View Project
             </a>
-            <button className="btn btn-outline btn-danger" onClick={toggleModal}>
+            <button className="btn btn-outline border-gray-100 text-gray-300 hover:border-green-600 " onClick={toggleModal}>
               Close
             </button>
           </div>

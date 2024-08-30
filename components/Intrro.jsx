@@ -1,24 +1,39 @@
 "use client"
-import React, {useRef, useEffect} from 'react'
+import React, { useRef, useEffect, useState } from 'react';
 import { RiDownload2Line } from "react-icons/ri";
-import Image from 'next/image'
+import Image from 'next/image';
 import GreenAnimatedButton from './misc/GreenAnimatedButton';
 import GrayAnimatedButton from './misc/GrayAnimatedButton';
-import { motion, useAnimate, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 export default function Intrro() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const ref =  useRef(null)
-  const isInView =  useInView(ref, {once: true})
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-  useEffect(()=>{
-    console.log(`Is in view: ${isInView}`)
-  }, [isInView])
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(`Is in view: ${isInView}`);
+  }, [isInView]);
 
   return (
     <div className="relative">
       <div className="area bg-gray-950">
-        <ul className="circles">
+        <ul className={`circles transition-opacity duration-500 ${isScrolled ? 'opacity-0' : 'opacity-100'}`}>
           <li></li>
           <li></li>
           <li></li>
@@ -31,12 +46,12 @@ export default function Intrro() {
           <li></li>
         </ul>
       </div>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8  px-4 lg:px-32 relative">
-        <motion.div 
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 px-4 lg:px-32 relative">
+        <motion.div
           ref={ref}
           variants={{
-            hidden: {opacity: 0, y: 75},
-            visible: {opacity: 1, y: 0}
+            hidden: { opacity: 0, y: 75 },
+            visible: { opacity: 1, y: 0 }
           }}
           initial="hidden"
           animate="visible"
@@ -58,9 +73,9 @@ export default function Intrro() {
           <Image src="/stack.png" alt="Picture of the author" width={500} height={500} className="hidden lg:block" />
         </div>
         <div className="absolute top-0 left-0 w-full h-full lg:hidden">
-          <Image src="/stack.png" alt="Picture of the author" layout="fill" objectFit="cover" style={{ opacity: 0.09 }} /> 
+          <Image src="/stack.png" alt="Picture of the author" layout="fill" objectFit="cover" style={{ opacity: 0.09 }} />
         </div>
       </div>
     </div>
-  )
+  );
 }

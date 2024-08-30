@@ -1,5 +1,5 @@
 import React from 'react'
-import PortfolioLImageItem from './portfolio/PortfolioLImageItem'
+import PortfolioItem from './portfolio/PortfolioItem'
 
 export default function Portfolio() {
   const projects = [
@@ -29,7 +29,7 @@ export default function Portfolio() {
         {/* Added lg:gap-8 for larger screen spacing */}
         {projects.map((project, index) => (
           <div key={index}>
-            <PortfolioLImageItem {...project} /> 
+            <PortfolioItem {...project} /> 
           </div>
         ))}
       </div>

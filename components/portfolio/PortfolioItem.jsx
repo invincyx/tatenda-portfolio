@@ -3,11 +3,15 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, MotionConfig, easeInOut } from 'framer-motion'
 
-export default function PortfolioItem({ title, imageLink, description, link }) {
+export default function PortfolioItem({ title, imageLink, description, link, stack }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const truncatedDescription = description.length > 300 ? description.substring(0, 250) + '...' : description;
 
+
+  const techBadges =  stack.map(tech => (
+        <div className="badge badge-lg mx-1">{tech}</div>
+      ))
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -50,12 +54,13 @@ export default function PortfolioItem({ title, imageLink, description, link }) {
       </div>
       <div className={`rounded-lg ${isModalOpen ? 'blur-sm' : ''}`}>
         <h3 className="py-4 text-2xl font-semibold lg:text-2xl text-gray-300">{title}</h3>
-        <div className="flex items-start gap-2 py-3">
-                <div className="badge badge-lg">NextJS</div>
-                <div className="badge badge-lg">Firebase</div>
-                <div className="badge badge-lg">NodeJS</div>
-            </div>
-        <p className="text-gray-300">
+
+            {
+            techBadges
+            }
+
+
+        <p className="text-gray-300 my-3">
           {truncatedDescription}
           {description.length > 250 && (
             <button className="text-blue-400 underline ml-2" onClick={toggleModal}>
@@ -78,14 +83,12 @@ export default function PortfolioItem({ title, imageLink, description, link }) {
             <Image src={imageLink} alt={title} width={500} height={500} className="w-full h-64 object-cover rounded-lg mb-4" />
             </div>
             <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-            <div className="flex items-start gap-2 py-3">
-                <div className="badge badge-lg">NextJS</div>
-                <div className="badge badge-lg">Firebase</div>
-                <div className="badge badge-lg">NodeJS</div>
-            </div>
+              
+
+              {techBadges}
 
 
-            <p className="mb-4">{description}</p>
+            <p className="my-4">{description}</p>
             <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline mb-4 block">
               View Project
             </a>

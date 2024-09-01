@@ -16,6 +16,12 @@ export default function Portfolio() {
       stack: ["Next JS", "Firebase", "Tailwind", "REST API"]
     },
     {
+      title: "Mjolo Hub",
+      imageLink: "/portfolio/mjolo.png",
+      description: "Mjolo Hub is a revolutionary dating app that has been designed to help singles find their perfect match The app is available for both Android and iOS devices, making it accessible to millions of users worldwide. With Mjolo Hub, users can create a profile that highlights their interests, hobbies, and preferences. This information is used to match them with other users who share similar interests and values. The app uses advanced algorithms to ensure that the matches are accurate and relevant. One of the unique features of Mjolo Hub is its video chat functionality.",
+      stack: ["Flutter", "Firebase"]
+    },
+    {
       title: "Mother Touch Group of Schools",
       imageLink: "/portfolio/mtgs.png",
       description: "Mother Touch, established in 1996 in Harare, Zimbabwe, began as a humble Early Childhood Development center and has grown into a premier educational institution. Celebrating 25 years, it now includes elite E.C.D centers, Junior and Senior schools, and plans for Tertiary Education. Recognized as a leading educational hub from ECD to High School, MTGS nurtures learners to excel globally, with many graduating from top universities. Our brand equips students to tackle life’s challenges and make a positive impact worldwide.",
@@ -38,11 +44,7 @@ export default function Portfolio() {
         ))}
       </div>
 
-      <div className="flex justify-center py-10">
-        <button className="btn btn-warning bg-green-700 text-white border-green-700">
-          View More Projects
-        </button>
-      </div>
+     
     </section>
   );
 }

@@ -57,13 +57,13 @@ export default function Intrro() {
           transition={{
             duration: 0.5, delay: 0.25
           }}
-          className="lg:col-span-2 py-48 lg:py-72"
+          className="lg:col-span-2 py-48 lg:pt-72"
         >
           <h3 className="mb-4 text-4xl font-bold lg:text-8xl text-gray-100">Hi, I'm Tatenda<span className="text-green-400">.</span></h3>
           {/* <h3 className="mb-4 text-4xl font-black lg:text-6xl text-gray-100"></h3> */}
           <h3 className="my-4 text-4xl lg:text-4xl text-gray-100">I'm a <span className="text-green-400">FullStack Developer</span> </h3>
           <p className="text-xl py-4 text-gray-100">I specialize in developing scalable web and app applications for millions of users. By combining modern technologies with user-focused design, I deliver high-quality solutions.</p>
-          <div className="flex my-8 gap-2">
+          <div className="flex mt-16 gap-2">
             <GreenAnimatedButton label="Contact Me" />
             <GrayAnimatedButton label="Download CV" icon={<RiDownload2Line className="text-xl" />} />
           </div>

@@ -33,7 +33,7 @@ export default function Portfolio() {
   return (
     <section className="px-4 py-6 lg:px-32 lg:py-12 bg-gray-950">
       <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-100 dark:text-white">
-        Portfolio
+        Portfolio<span className="text-green-400">.</span>
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8"> 
         {/* Added lg:gap-8 for larger screen spacing */}

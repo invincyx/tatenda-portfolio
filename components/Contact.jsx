@@ -6,6 +6,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard/lib/Component';
 import toast, { Toaster } from 'react-hot-toast';
 import { RiTwitterXFill, RiLinkedinBoxFill,RiGithubFill } from "react-icons/ri";
 import SocialIcon from './nav/SocialIcon';
+import SocialIcons from './misc/SocialIcons';
 
 
 export default function Contact() {
@@ -48,9 +49,7 @@ export default function Contact() {
 <p className="mb-4 lg:mt-12  font-light text-center text-gray-200 text-sm sm:text-xl">or via my accounts</p>
       <div className="flex justify-center gap-2">
             
-            <SocialIcon icon={<RiTwitterXFill />} />
-            <SocialIcon icon={<RiLinkedinBoxFill />} />
-            <SocialIcon icon={<RiGithubFill />} />
+             <SocialIcons />
 
         </div>
   </div>

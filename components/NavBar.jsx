@@ -1,9 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import NavItem from './nav/NavItem';
-import { RiTwitterXFill, RiLinkedinBoxFill,RiGithubFill } from "react-icons/ri";
-import SocialIcon from './nav/SocialIcon';
+
 import ScaleRotateAnimation from './animations/ScaleRotate';
+import SocialIcons from './misc/SocialIcons';
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,9 +29,7 @@ export default function NavBar() {
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-2">
             
-              <SocialIcon icon={<RiTwitterXFill />} />
-              <SocialIcon icon={<RiLinkedinBoxFill />} />
-              <SocialIcon icon={<RiGithubFill />} />
+             <SocialIcons />
 
           </div>
 

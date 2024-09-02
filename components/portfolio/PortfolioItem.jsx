@@ -6,7 +6,7 @@ import { motion, MotionConfig, easeInOut } from 'framer-motion'
 export default function PortfolioItem({ title, imageLink, description, link, stack }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const truncatedDescription = description.length > 300 ? description.substring(0, 250) + '...' : description;
+  const truncatedDescription = description.length > 350 ? description.substring(0, 250) + '...' : description;
 
 
   const techBadges =  stack.map((tech, index) => (
@@ -63,8 +63,8 @@ export default function PortfolioItem({ title, imageLink, description, link, sta
         <p className="text-gray-300 my-3">
           {truncatedDescription}
           {description.length > 250 && (
-            <button className="text-blue-400 underline ml-2" onClick={toggleModal}>
-              Learn More
+            <button className="text-green-400 underline ml-4" onClick={toggleModal}>
+              Read More
             </button>
           )}
         </p>

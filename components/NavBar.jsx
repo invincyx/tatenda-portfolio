@@ -1,8 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import NavItem from './nav/NavItem';
-import GreenAnimatedButton from './misc/GreenAnimatedButton';
-import { RiTwitterXFill, RiLinkedinBoxFill } from "react-icons/ri";
+import { RiTwitterXFill, RiLinkedinBoxFill,RiGithubFill } from "react-icons/ri";
+import SocialIcon from './nav/SocialIcon';
+import ScaleRotateAnimation from './animations/ScaleRotate';
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,8 +29,9 @@ export default function NavBar() {
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-2">
             
-            <RiTwitterXFill className="text-2xl text-gray-200" />
-            <RiLinkedinBoxFill className="text-3xl text-gray-200" />
+              <SocialIcon icon={<RiTwitterXFill />} />
+              <SocialIcon icon={<RiLinkedinBoxFill />} />
+              <SocialIcon icon={<RiGithubFill />} />
 
           </div>
 
@@ -66,9 +68,11 @@ export default function NavBar() {
 
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
-             <GreenAnimatedButton
-              label="Hire Me"
-              />
+            <ScaleRotateAnimation>
+                <button className="btn bg-green-400 border-green-400" >
+                  Contact Me
+                </button>
+            </ScaleRotateAnimation>
             </div>
 
             <div className="block md:hidden">

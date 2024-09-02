@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { RiArrowRightDoubleLine } from "react-icons/ri";
 import { motion, MotionConfig, easeInOut } from 'framer-motion'
 
 export default function PortfolioItem({ title, imageLink, description, link, stack }) {
@@ -10,7 +11,7 @@ export default function PortfolioItem({ title, imageLink, description, link, sta
 
 
   const techBadges =  stack.map((tech, index) => (
-        <div key={index}  className="badge badge-lg mx-1">{tech}</div>
+        <div key={index}  className="badge badge-lg bg-green-400 border-green-400  mx-1 my-1">{tech}</div>
       ))
 
   const toggleModal = () => {
@@ -64,7 +65,10 @@ export default function PortfolioItem({ title, imageLink, description, link, sta
           {truncatedDescription}
           {description.length > 250 && (
             <button className="text-green-400 underline ml-4" onClick={toggleModal}>
-              Read More
+              <div className="flex ">
+              Read More 
+               <span className="py-1 text-xl"><RiArrowRightDoubleLine  /></span> 
+              </div>
             </button>
           )}
         </p>

@@ -9,8 +9,8 @@ export default function PortfolioItem({ title, imageLink, description, link, sta
   const truncatedDescription = description.length > 300 ? description.substring(0, 250) + '...' : description;
 
 
-  const techBadges =  stack.map(tech => (
-        <div className="badge badge-lg mx-1">{tech}</div>
+  const techBadges =  stack.map((tech, index) => (
+        <div key={index}  className="badge badge-lg mx-1">{tech}</div>
       ))
 
   const toggleModal = () => {

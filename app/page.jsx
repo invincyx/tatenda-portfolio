@@ -17,7 +17,7 @@ export default function Home() {
         {/* <section id="port"><PortfolioV2 /></section> */}
         <section id="portfolio"><Portfolio /></section>
         <section id="contact"><Contact /></section>
-        <section id="footer"><Footer /> </section>
+        {/* <section id="footer"><Footer /> </section> */}
     </main>
   );
 }

@@ -27,11 +27,11 @@ export default function NavBar() {
     <header className={`fixed top-0 left-0 right-0 z-50  transition-colors duration-300 ${isScrolled ? 'bg-black/70 backdrop-blur-md': ' bg-opacity-0' }  py-2 `}>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="md:flex md:items-center md:gap-2">
+          {/* <div className="md:flex md:items-center md:gap-2"> */}
             
              <SocialIcons />
 
-          </div>
+          {/* </div> */}
 
           <div className="hidden md:block">
             <nav aria-label="Global">

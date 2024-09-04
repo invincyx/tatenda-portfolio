@@ -4,8 +4,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Portfolio from "@/components/Portfolio";
-import PortfolioV2 from "@/components/PortfolioV2";
-import Footer from "@/components/Footer";
+
 
 export default function Home() {
   return (

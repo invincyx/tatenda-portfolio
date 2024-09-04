@@ -9,6 +9,7 @@ import Drawer from 'react-modern-drawer'
 
 //import styles 👇
 import 'react-modern-drawer/dist/index.css'
+import Link from 'next/link';
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -105,46 +106,42 @@ export default function NavBar() {
      
     </header>
     <Drawer
-                open={isOpen}
-                onClose={toggleDrawer}
-                direction='right'
-                className='bg-gray-900'
-                style={{ background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(10px)' }}
-            >
-                <nav aria-label="Global" className="py-12 px-6 ">
-                  <ul className="flex flex-col items-start gap-6 text-sm">
-                    <NavItem
-                        link="#home"
-                        title="Home"
-                        onClick={toggleDrawer}
-                    />
-
-                    <NavItem
-                        link="#about"
-                        title="About"
-                        onClick={toggleDrawer}
-                    />
-
-                    <NavItem
-                        link="#services"
-                        title="Services"
-                        onClick={toggleDrawer}
-                    />
-
-                    <NavItem
-                        link="#portfolio"
-                        title="Portfolio"
-                        onClick={toggleDrawer}
-                    />
-
-                    <NavItem
-                        link="#contact"
-                        title="Contact"
-                        onClick={toggleDrawer}
-                    />
-                  </ul>
-                </nav>
-            </Drawer>
+        open={isOpen}
+        onClose={toggleDrawer}
+        direction='right'
+        className='bg-gray-900'
+        style={{ background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(10px)' }}
+      >
+        <nav aria-label="Global" className="py-12 px-6">
+          <ul className="flex flex-col items-start gap-6 text-sm">
+            <li>
+              <Link href="#home" onClick={toggleDrawer} className="text-white">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="#about" onClick={toggleDrawer} className="text-white">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="#services" onClick={toggleDrawer} className="text-white">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link href="#portfolio" onClick={toggleDrawer} className="text-white">
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link href="#contact" onClick={toggleDrawer} className="text-white">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </Drawer>
     </>
   );
 }

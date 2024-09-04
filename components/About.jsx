@@ -7,17 +7,19 @@ export default function About() {
         
                 <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-100 ">About Me<span className="text-green-400">.</span></h3>
                 <p className="px-4 lg:px-24 text-gray-200">
-                I'm a Web and App Developer with 5+ years of experience in creating scalable applications. I specialize in React, Node.js, MongoDB, Express, Firebase, and Flutter to deliver client-focused solutions.
-
-Excited to collaborate on new projects! Let's build something amazing together!
-                </p>
-                <p className="px-4 lg:px-24 text-gray-200">
-                My skills include frontend development with React and Flutter, backend with Node.js and Express, and databases with MongoDB. I integrate cloud services like Firebase for real-time data and authentication.</p>
-
-                <p className="px-4 lg:px-24 text-gray-200">I've built applications for millions of users, ensuring performance and reliability. Notable projects include e-commerce platforms and social media apps. I've developed around 10 cross-platform mobile apps using Flutter.</p>
-
-                <p className="px-4 lg:px-24 text-gray-200">I focus on understanding client goals and delivering solutions that exceed expectations. I'm passionate about continuous learning to provide cutting-edge solutions.
-                </p>
+  Hey there! I'm a Web and App Developer with 5+ years of experience building scalable applications. I specialize in React, Node.js, MongoDB, Express, Firebase, and Flutter to deliver innovative, client-focused solutions.
+  
+  Excited to collaborate on new projects—let's create something amazing together!
+</p>
+<p className="px-4 lg:px-24 text-gray-200">
+  My skills cover frontend development with React and Flutter, backend with Node.js and Express, and databases with MongoDB. I leverage Firebase for real-time data and authentication.
+</p>
+<p className="px-4 lg:px-24 text-gray-200">
+  With applications built for millions, I ensure high performance and reliability. I've launched around 10 cross-platform mobile apps using Flutter, focusing on solutions that exceed client expectations.
+</p>
+<p className="px-4 lg:px-24 text-gray-200">
+  I'm passionate about continuous learning to stay ahead in tech and deliver cutting-edge solutions.
+</p>
              
               
         </div>

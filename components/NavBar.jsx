@@ -4,9 +4,19 @@ import NavItem from './nav/NavItem';
 
 import ScaleRotateAnimation from './animations/ScaleRotate';
 import SocialIcons from './misc/SocialIcons';
+// import component 👇
+import Drawer from 'react-modern-drawer'
+
+//import styles 👇
+import 'react-modern-drawer/dist/index.css'
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const [isOpen, setIsOpen] = React.useState(false)
+    const toggleDrawer = () => {
+        setIsOpen((prevState) => !prevState)
+    }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +34,7 @@ export default function NavBar() {
   }, []);
 
   return (
+    <>
     <header className={`fixed top-0 left-0 right-0 z-50  transition-colors duration-300 ${isScrolled ? 'bg-black/70 backdrop-blur-md': ' bg-opacity-0' }  py-2 `}>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -74,7 +85,7 @@ export default function NavBar() {
             </div>
 
             <div className="block md:hidden">
-              <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+              <button onClick={toggleDrawer} className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -90,6 +101,51 @@ export default function NavBar() {
           </div>
         </div>
       </div>
+
+     
     </header>
+    <Drawer
+                open={isOpen}
+                onClose={toggleDrawer}
+                direction='right'
+                className='bg-gray-900'
+                style={{ background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(10px)' }}
+            >
+                <nav aria-label="Global" className="py-12 px-6 ">
+                  <ul className="flex flex-col items-start gap-6 text-sm">
+                    <NavItem
+                        link="#home"
+                        title="Home"
+                        onClick={toggleDrawer}
+                    />
+
+                    <NavItem
+                        link="#about"
+                        title="About"
+                        onClick={toggleDrawer}
+                    />
+
+                    <NavItem
+                        link="#services"
+                        title="Services"
+                        onClick={toggleDrawer}
+                    />
+
+                    <NavItem
+                        link="#portfolio"
+                        title="Portfolio"
+                        onClick={toggleDrawer}
+                    />
+
+                    <NavItem
+                        link="#contact"
+                        title="Contact"
+                        onClick={toggleDrawer}
+                    />
+                  </ul>
+                </nav>
+            </Drawer>
+    </>
   );
 }
+

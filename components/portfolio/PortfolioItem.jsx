@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { RiArrowRightDoubleLine } from "react-icons/ri";
 import { motion, MotionConfig, easeInOut } from 'framer-motion'
+import Link from 'next/link';
 
 export default function PortfolioItem({ title, imageLink, description, link, stack }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -93,9 +94,11 @@ export default function PortfolioItem({ title, imageLink, description, link, sta
 
 
             <p className="my-4">{description}</p>
-            <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline mb-4 block">
+           { 
+            link &&
+            <Link href={link} target="_blank" rel="noopener noreferrer" className="text-green-400 underline mb-4 block">
               View Project
-            </a>
+            </Link>}
             <button className="btn btn-outline border-gray-100 text-gray-300 hover:border-green-600 " onClick={toggleModal}>
               Close
             </button>

@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { RiDownload2Line } from "react-icons/ri";
 import { motion, useInView } from 'framer-motion';
 import ScaleRotateAnimation from './animations/ScaleRotate';
+import Link from 'next/link';
 
 export default function Intrro() {
   const ref = useRef(null);
@@ -63,9 +64,11 @@ export default function Intrro() {
           <p className="text-xl py-4 text-gray-100">I specialize in developing scalable web and app applications for millions of users. By combining modern technologies with user-focused design, I deliver high-quality solutions.</p>
           <div className="flex mt-16 gap-2">
             <ScaleRotateAnimation>
+            <Link href="#contact">
                 <button className="btn bg-green-400 border-green-400" >
                   Contact Me
                 </button>
+            </Link>
             </ScaleRotateAnimation>
             <ScaleRotateAnimation>
                 <button className="btn hover:bg-green-400 hover:border-green-400" >

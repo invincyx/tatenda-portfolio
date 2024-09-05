@@ -79,9 +79,11 @@ export default function NavBar() {
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
             <ScaleRotateAnimation>
+              <Link href="#contact">
                 <button className="btn bg-green-400 border-green-400" >
                   Contact Me
                 </button>
+              </Link>
             </ScaleRotateAnimation>
             </div>
 

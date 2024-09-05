@@ -19,7 +19,7 @@ export default function Contact() {
           Whether you've got a cool project idea or just want to say hi, I'm all ears! Drop me a line and let's chat.</p>
       <div className="flex items-center justify-center"> 
       <div className="flex justify-center">
-          <Link href="mailto:nyongotj@gmail.com" className="mb-4 text-center text-3xl tracking-tight font-bold text-green-400"> 
+          <Link href="mailto:nyongotj@gmail.com" className="mb-4 text-center text-3xl sm:text-xl tracking-tight font-bold text-green-400"> 
             nyongotj@gmail.com
           </Link>
 
@@ -46,12 +46,12 @@ export default function Contact() {
 
 </div>
 
-<p className="mb-4 lg:mt-12  font-light text-center text-gray-200 text-sm sm:text-xl">or via my accounts</p>
+{/* <p className="mb-4 lg:mt-12  font-light text-center text-gray-200 text-sm sm:text-xl">or via my accounts</p>
       <div className="flex justify-center gap-2">
             
              <SocialIcons />
 
-        </div>
+        </div> */}
   </div>
 </section>
   )

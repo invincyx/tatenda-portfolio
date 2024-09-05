@@ -4,7 +4,9 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Portfolio from "@/components/Portfolio";
+import ReactGA from 'react-ga4';
 
+ReactGA.initialize(process.env.NEXT_PUBLIC_GA_TRACKING_ID);
 
 export default function Home() {
   return (

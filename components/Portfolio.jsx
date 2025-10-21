@@ -95,7 +95,13 @@ export default function Portfolio() {
           className="text-center mb-12"
         >
           <h3 className="mb-6 text-5xl lg:text-6xl tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">
-            Portfolio<span className="text-green-400">.</span>
+            Portfolio<motion.span
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="text-green-400 inline-block"
+            >.</motion.span>
           </h3>
           <p className="lg:w-2/3 mx-auto text-center text-gray-400 text-lg lg:text-xl leading-relaxed">
             Showcasing innovative projects that deliver real-world impact and exceptional user experiences.

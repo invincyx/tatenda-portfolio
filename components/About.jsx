@@ -1,6 +1,8 @@
+'use client'
 import React from 'react'
 import { RiStackFill,RiArrowRightLine } from "react-icons/ri";
 import SocialIcons from './misc/SocialIcons';
+import { motion } from 'framer-motion';
 
 export default function About() {
 
@@ -44,7 +46,13 @@ const techStack = stack.map((item, index) => {
       <div className="rounded-lg lg:col-span-2">
       <div className="rounded-lg lg:col-span-2 text-lg pb-16">
         
-        <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-100 ">About Me<span className="text-green-400">.</span></h3>
+        <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-100 ">About Me<motion.span
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="text-green-400 inline-block"
+            >.</motion.span></h3>
         <p className="px-4 lg:px-24 text-gray-200">
         Hey there! I'm a Web and App Developer with 5+ years of experience building scalable applications. I specialize in delivering innovative, client-focused solutions. Excited to collaborate on new projects—let's create something amazing together!
               </p>
@@ -75,7 +83,13 @@ const techStack = stack.map((item, index) => {
           <div className="flex items-center justify-center mb-6">
             <RiStackFill className="text-green-400 mx-2 text-3xl" /> 
             <h3 className="text-2xl tracking-tight font-bold text-gray-100"> 
-              My Tech Stack<span className="text-green-400">.</span>
+              My Tech Stack<motion.span
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="text-green-400 inline-block"
+            >.</motion.span>
             </h3> 
           </div>
           <div className="flex flex-wrap gap-3 justify-center lg:justify-start">

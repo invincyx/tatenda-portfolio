@@ -147,26 +147,6 @@ export default function Intrro() {
                 </motion.button>
               </Link>
             </ScaleRotateAnimation>
-            
-            <ScaleRotateAnimation>
-              <motion.button
-                whileHover={{ 
-                  scale: 1.05, 
-                  backgroundColor: 'rgba(74, 222, 128, 0.1)',
-                  borderColor: 'rgb(74, 222, 128)'
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-gray-600 text-gray-100 hover:border-green-400 hover:text-green-400 font-semibold px-8 py-3 rounded-lg text-base transition-all duration-300 flex items-center gap-2"
-              >
-                Download CV
-                <motion.div
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <RiDownload2Line className="text-xl" />
-                </motion.div>
-              </motion.button>
-            </ScaleRotateAnimation>
           </motion.div>
         </motion.div>
       </div>

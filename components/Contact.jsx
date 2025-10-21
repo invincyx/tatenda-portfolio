@@ -7,6 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { RiTwitterXFill, RiLinkedinBoxFill,RiGithubFill } from "react-icons/ri";
 import SocialIcon from './nav/SocialIcon';
 import SocialIcons from './misc/SocialIcons';
+import { motion } from 'framer-motion';
 
 
 export default function Contact() {
@@ -14,7 +15,13 @@ export default function Contact() {
   return (
     <section className="bg-gray-950 pb-20">
   <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-      <h2 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-200 ">Let's Work Together<span className="text-green-400">.</span></h2>
+      <h2 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-200 ">Let's Work Together<motion.span
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="text-green-400 inline-block"
+            >.</motion.span></h2>
       <p className="mb-8 lg:mb-8 font-light text-center text-gray-200 sm:text-xl">Ready to connect?
           Whether you've got a cool project idea or just want to say hi, I'm all ears! Drop me a line and let's chat.</p>
       <div className="flex items-center justify-center"> 

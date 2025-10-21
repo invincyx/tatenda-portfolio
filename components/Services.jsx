@@ -43,7 +43,13 @@ export default function Services() {
           className="text-center mb-12"
         >
           <h3 className="mb-6 text-5xl lg:text-6xl tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">
-            Services<span className="text-green-400">.</span>
+            Services<motion.span
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="text-green-400 inline-block"
+            >.</motion.span>
           </h3>
           <p className="lg:w-2/3 mx-auto text-center text-gray-400 text-lg lg:text-xl leading-relaxed">
             I specialize in delivering high-quality web and app development solutions tailored to your needs.

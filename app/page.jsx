@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Portfolio from "@/components/Portfolio";
+import AiChat from "@/components/AiChat";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <section id="portfolio"><Portfolio /></section>
         <section id="contact"><Contact /></section>
         {/* <section id="footer"><Footer /> </section> */}
+        <AiChat />
     </main>
   );
 }

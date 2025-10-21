@@ -5,12 +5,12 @@ import SocialIcons from './misc/SocialIcons';
 export default function About() {
 
 const stack = [
-
     "HTML",
     "CSS",
     "JavaScript",
     "TypeScript",
     "Python",
+    "Java",
     "TailwindCSS",
     "Bootstrap",
     "ReactJS",
@@ -19,6 +19,7 @@ const stack = [
     "Flask",
     "ExpressJS",
     "Firebase",
+    "Supabase",
     "Flutter",
     "MongoDB",
     "PostgreSQL",
@@ -27,12 +28,17 @@ const stack = [
 
 const techStack = stack.map((item, index) => {
     return (
-        <div key={index} className={"badge badge-lg badge-neutral py-4 mx-1 my-2 "}>{item}</div>
+        <div 
+            key={index} 
+            className="group relative bg-gray-800/50 hover:bg-gradient-to-r hover:from-green-400/10 hover:to-emerald-500/10 border border-gray-700 hover:border-green-400/50 text-gray-200 hover:text-green-400 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-400/20 cursor-default"
+        >
+            {item}
+        </div>
     )
   })
 
   return (
-    <div className="lg:px-32 bg-gray-950">
+    <div className="lg:px-32 bg-gray-950 pt-16 lg:pt-24">
 
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-2">
       <div className="rounded-lg lg:col-span-2">
@@ -65,15 +71,16 @@ const techStack = stack.map((item, index) => {
 
 
 
-      <div className="rounded-lg my-10 sm: mx-2">
-          <div className="flex items-center justify-center">
-            <RiStackFill className="text-green-400 mx-1 my-2 text-2xl" /> 
-            <h3 className="mb-4 mt-2 text-xl tracking-tight font-bold text-gray-100 inline-block"> 
+      <div className="rounded-lg my-10 mx-2 lg:mx-0">
+          <div className="flex items-center justify-center mb-6">
+            <RiStackFill className="text-green-400 mx-2 text-3xl" /> 
+            <h3 className="text-2xl tracking-tight font-bold text-gray-100"> 
               My Tech Stack<span className="text-green-400">.</span>
             </h3> 
           </div>
-        {techStack}
-
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+            {techStack}
+          </div>
       </div>
     </div>
 

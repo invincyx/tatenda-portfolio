@@ -1,8 +1,24 @@
+'use client'
 import React from 'react'
 import PortfolioItem from './portfolio/PortfolioItem'
+import { motion } from 'framer-motion'
 
 export default function Portfolio() {
   const projects = [
+    {
+      title: "ZimFlix - Zimbabwe's Premier Streaming Platform",
+      imageLink: "/portfolio/zimflix.png",
+      description: "ZimFlix is Zimbabwe's premier streaming platform featuring authentic local content including movies, TV series, documentaries, and music videos. We celebrate African storytelling with world-class production quality.",
+      stack: ["React JS", "TypeScript", "Supabase", "Tailwind", "Cloudflare"],
+      link: "https://zimflix.co.zw"
+    },
+    {
+      title: "Cherutombo High School - Enterprise School Management System",
+      imageLink: "/portfolio/sms.png",
+      description: "A comprehensive, enterprise-grade School Management System powering Cherutombo High School in Marondera, serving 2,500+ users including students, staff, and parents. This robust platform streamlines educational operations with integrated modules for fee management, academic results tracking, student records, teacher management, and real-time attendance monitoring. The system enhances institutional efficiency, improves parent-school communication, and provides actionable insights through advanced reporting and analytics. Built to scale and designed for seamless daily operations in modern educational institutions.",
+      stack: ["Next JS", "MongoDB", "Express", "REST API", "Cloudflare AI"],
+      link: "https://portal.cherutombohighschool.ac.zw"
+    },
     {
       title: "USSD-Based Payment Integration for Content Delivery Platform",
       imageLink: "/portfolio/sdp.png",
@@ -25,11 +41,11 @@ export default function Portfolio() {
       link: "https://apps.apple.com/zw/app/mjolo-hub/id1601620566"
     },
     {
-      title: "Lit Files",
-      imageLink: "/portfolio/lit-files.png",
-      description: "Unlock a world of knowledge with our game-changing E-learning app! Say goodbye to heavy backpacks and hello to a library in your pocket. Lit Files lets students download and read resources on-the-go, making learning as easy as checking social media. Dive into a sea of textbooks, study guides, and more – all at your fingertips. Welcome to the future of education!. It's available on both Android and iOS devices.",
-      stack: ["Flutter", "Firebase"],
-      link: "https://apps.apple.com/zw/app/lit-files-study-and-revision/id6443919088"
+      title: "Lit Files - AI-Powered Educational Platform",
+      imageLink: "/portfolio/litfiles-new.png",
+      description: "Lit Files is a revolutionary educational technology platform transforming how students access and interact with learning resources. This comprehensive ecosystem features a cutting-edge web portal and mobile applications (iOS & Android) that bring libraries to students' fingertips. Powered by AI, the platform offers intelligent content recommendations, advanced search capabilities, and personalized learning experiences. Students can seamlessly download, read, and study textbooks, past papers, and educational materials on-the-go. With cloud synchronization across all devices, Lit Files eliminates heavy backpacks while delivering an engaging, modern learning experience that scales to serve thousands of students nationwide.",
+      stack: ["Next JS", "Flutter", "Firebase", "Cloudflare", "OpenAI"],
+      link: "https://litfiles.net"
     },
     {
       title: "Mother Touch Group of Schools",
@@ -41,21 +57,65 @@ export default function Portfolio() {
    
   ];
 
-  return (
-    <section className="px-4 py-6 lg:px-32 lg:py-12 bg-gray-950">
-      <h3 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-100 dark:text-white">
-        Portfolio<span className="text-green-400">.</span>
-      </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8"> 
-        {/* Added lg:gap-8 for larger screen spacing */}
-        {projects.map((project, index) => (
-          <div key={index}>
-            <PortfolioItem {...project} /> 
-          </div>
-        ))}
-      </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
 
-     
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  return (
+    <section className="px-4 py-12 lg:px-32 lg:py-20 bg-gray-950 relative overflow-hidden">
+      {/* Background Gradient Accents */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-green-400/5 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px]"></div>
+      
+      <div className="relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h3 className="mb-6 text-5xl lg:text-6xl tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-300">
+            Portfolio<span className="text-green-400">.</span>
+          </h3>
+          <p className="lg:w-2/3 mx-auto text-center text-gray-400 text-lg lg:text-xl leading-relaxed">
+            Showcasing innovative projects that deliver real-world impact and exceptional user experiences.
+          </p>
+        </motion.div>
+        
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10"
+        >
+          {projects.map((project, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <PortfolioItem {...project} /> 
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }

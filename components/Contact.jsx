@@ -12,7 +12,7 @@ import SocialIcons from './misc/SocialIcons';
 export default function Contact() {
   const [isCopied, setIsCopied] = useState(false)
   return (
-    <section className="bg-gray-900 ">
+    <section className="bg-gray-950 pb-20">
   <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <h2 className="mb-4 text-4xl tracking-tight font-bold text-center text-gray-200 ">Let's Work Together<span className="text-green-400">.</span></h2>
       <p className="mb-8 lg:mb-8 font-light text-center text-gray-200 sm:text-xl">Ready to connect?
